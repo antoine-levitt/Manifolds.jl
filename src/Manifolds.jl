@@ -23,7 +23,7 @@ abstract type Manifold
 end
 
 # fallback for out-of-place ops
-project_tangent(M::Manifold,x) = project_tangent!(M, similar(x), x)
+project_tangent(M::Manifold,g,x) = project_tangent!(M, copy(x), x)
 retract(M::Manifold,x) = retract!(M, copy(x))
 
 """Flat Euclidean space {R,C}^N, with projections equal to the identity."""
