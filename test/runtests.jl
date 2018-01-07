@@ -1,5 +1,6 @@
 using Manifolds
 using Base.Test
 
-# write your own tests here
-@test 1 == 2
+M = Sphere()
+x = randn(3)
+@test norm(retract(M, x)) ≈ 1
